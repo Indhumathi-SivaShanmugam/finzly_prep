@@ -31,7 +31,19 @@ public class Functions_trial {
         double display=convertlogic(celsius);
         System.out.println("The Temp in celcius is "+ display);
     }
-    public static void main(String[] args) {
+    public static void CountDown(int n) throws InterruptedException{
+        if(n==0){
+
+            System.out.println("Time Up!");
+            return;}
+        else if (n>0){
+            System.out.println(n);
+            Thread.sleep(1000);
+            CountDown(n-1);
+        }
+
+    }
+    public static void main(String[] args) throws InterruptedException {
        isEven(5);
        isEven(8);
        MaxOf2(5,8);
@@ -39,6 +51,7 @@ public class Functions_trial {
        System.out.println("Enter Temp in Celcius");
        double celcius= scanner.nextDouble();
        DisplayF(celcius);
+       CountDown(10);
 
 
     }
